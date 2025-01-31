@@ -1,12 +1,12 @@
 # Project-V-Containerizing-a-Java-Application-with-Docker
-Scenario:
+* Scenario:
 You're managing a multi-tier application running on virtual machines (VMs), with regular deployments and continuous updates. However, this setup has some significant challenges.
-The Problem:
-High Costs: Increased capital (CapEx) and operational expenses (OpEx).
-Human Errors: Deployment inconsistencies due to manual processes.
-Scalability Issues: Not compatible with a microservices architecture.
-Resource Wastage: Inefficient use of computing power.
-Lack of Portability: Applications don't run consistently across different environments.
+* The Problem:
+     * High Costs: Increased capital (CapEx) and operational expenses (OpEx).
+     * Human Errors: Deployment inconsistencies due to manual processes.
+     * Scalability Issues: Not compatible with a microservices architecture.
+     * Resource Wastage: Inefficient use of computing power.
+     * Lack of Portability: Applications don't run consistently across different environments.
 
 The Solution: Containerization!
 By using Docker, we can:
