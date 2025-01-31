@@ -8,10 +8,10 @@ You're managing a multi-tier application running on virtual machines (VMs), with
      * Resource Wastage: Inefficient use of computing power.
      * Lack of Portability: Applications don't run consistently across different environments.
 
-The Solution: Containerization!
-By using Docker, we can:
-✅ Reduce resource consumption - Containers are lightweight and efficient.
-✅ Enable microservices - Perfect for modern application design.
+* The Solution: Containerization!
+  * By using Docker, we can:
+    * ✅ Reduce resource consumption - Containers are lightweight and efficient.
+    * ✅ Enable microservices - Perfect for modern application design.
 ✅ Standardize deployment - Use Docker images for consistency.
 ✅ Ensure portability - The same container image runs in all environments.
 ✅ Improve reusability - Easily repeat deployments with minimal effort.
