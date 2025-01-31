@@ -18,18 +18,19 @@ You're managing a multi-tier application running on virtual machines (VMs), with
 * Why Containerization Matters?
      - 📊 81% of organizations rely on DevOps teams to manage containerized environments
      - 📊 78% of cloud users need containerization knowledge to operate efficiently
+       
 * Tools Used:
-Docker - Container runtime for building and running images.
-Docker Compose - To manage multi-container applications.
-Nginx - Web server for load balancing and reverse proxy.
-Tomcat - Serves the Java-based application.
-MySQL - Database management.
-Memcached - Caching to speed up performance.
-RabbitMQ - Message broker for efficient communication.
+  * Docker - Container runtime for building and running images.
+  * Docker Compose - To manage multi-container applications.
+  * Nginx - Web server for load balancing and reverse proxy.
+  * Tomcat - Serves the Java-based application.
+  * MySQL - Database management.
+  * Memcached - Caching to speed up performance.
+  * RabbitMQ - Message broker for efficient communication.
 
-Implementation Steps:
-1️⃣ Select a Base Image from DockerHub.
-2️⃣ Create a Dockerfile to customize the image.
+* Implementation Steps:
+  _1️⃣ Select a Base Image from DockerHub.
+  _2️⃣ Create a Dockerfile to customize the image.
 3️⃣ Write a docker-compose.yml file to run multiple containers.
 4️⃣ Test everything and push the images to DockerHub.
 By leveraging Docker and containerization, we optimize our Java application for efficiency, scalability, and seamless deployment across environments. 🚀
