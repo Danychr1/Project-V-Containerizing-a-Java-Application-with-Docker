@@ -30,8 +30,11 @@ You're managing a multi-tier application running on virtual machines (VMs), with
 
 * Implementation Steps:
   * 1️⃣ Select a Base Image from DockerHub.
+     * 
   * 2️⃣ Create a Dockerfile to customize the image.
   * 3️⃣ Write a docker-compose.yml file to run multiple containers.
   * 4️⃣ Test everything and push the images to DockerHub.
     
 * By leveraging Docker and containerization, we optimize our Java application for efficiency, scalability, and seamless deployment across environments. 🚀
+
+* 
