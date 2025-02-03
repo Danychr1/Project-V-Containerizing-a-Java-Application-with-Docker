@@ -32,6 +32,7 @@ You're managing a multi-tier application running on virtual machines (VMs), with
   * 1️⃣ Select a Base Image from DockerHub.
      * Set up Docker's apt repository.
        * Add Docker's official GPG key:
+         
                     sudo apt-get update
                     sudo apt-get install ca-certificates curl
                     sudo install -m 0755 -d /etc/apt/keyrings
