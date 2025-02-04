@@ -50,7 +50,8 @@ You're managing a multi-tier application running on virtual machines (VMs), with
          
     
   * 2️⃣ Create a Dockerfile to customize the image.
-        * Dockerfile for App Image [TOMCAT]
+    
+    * Dockerfile for App Image [TOMCAT]
     
             FROM maven:3.9.9-eclipse-temurin-21-jammy AS BUILD_IMAGE 
             RUN  git clone https://github.com/hkhcoder/vprofile-project.git
@@ -74,7 +75,7 @@ You're managing a multi-tier application running on virtual machines (VMs), with
             ENV MYSQL_DATABASE="accounts"
 
             ADD db_backuo.sql docker-entrypoint-initdb.d/db_backuo.sql
-      * Dockerfile fo Web Image [NGINX]
+     * Dockerfile fo Web Image [NGINX]
         
             FROM nginx
             LABEL "Project"="Vprofile"
