@@ -85,8 +85,60 @@ You're managing a multi-tier application running on virtual machines (VMs), with
             COPY nginvprofile.conf /etc/nginx/conf.d/vproapp.conf
         
   * 3️⃣ Write a docker-compose.yml file to run multiple containers.
+
+        version: '3.8'
+        services:
+            vprodb: 
+              build:
+                context: ./Docker-files/db
+              image: vprocontainers/vprofiledb 
+              container_name: vprodb
+              ports:
+                - "3306:3306"
+              volumes:
+                - vprodbdata:/var/lib/mysql
+              environment:
+                - MYSQL_ROOT_PASSWORD=vprodbpass
+
+           vprocache01:
+              image: memcahed
+              container_name: vprocache01
+              ports:
+                - "11211:11211"
+
+           vpromq01:
+              image: rabbitmq
+              ports:
+                - "5672:5672"
+              environment:
+                - RABBITMQ_DEFAULT_USER=guess
+                - RABBITMQ_DEFAULT_PASS=guess
+
+          vproapp:
+              build:
+                context: ./Docker-files/app
+              image: vprocontainers/vprofileapp
+              container_name: vproapp
+              ports:
+                 - "8080:8080"
+              volumes:
+                - vproappdata:/usr/local/tomcat/webapps
+
+          vproweb:
+              build:
+                  context: ./Docker-files/web
+              image: vprocontainers/vprofileweb
+              container_name: vproapp
+              ports:
+                - "80:80"
+
+
+        volumes: 
+            vprodbdata: {}
+            vproappdata: {} 
+
   * 4️⃣ Test everything and push the images to DockerHub.
     
 * By leveraging Docker and containerization, we optimize our Java application for efficiency, scalability, and seamless deployment across environments. 🚀
 
-* 
+
