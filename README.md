@@ -141,4 +141,4 @@ You're managing a multi-tier application running on virtual machines (VMs), with
     
 * By leveraging Docker and containerization, we optimize our Java application for efficiency, scalability, and seamless deployment across environments. 🚀
 
-
+* Author 👨🏽‍💻: Dany Christel
