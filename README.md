@@ -50,6 +50,39 @@ You're managing a multi-tier application running on virtual machines (VMs), with
          
     
   * 2️⃣ Create a Dockerfile to customize the image.
+        * Dockerfile for App Image [TOMCAT]
+    
+            FROM maven:3.9.9-eclipse-temurin-21-jammy AS BUILD_IMAGE 
+            RUN  git clone https://github.com/hkhcoder/vprofile-project.git
+            RUN cd vprofile-profile && git checkout containers && mvn install
+
+            FROM tomcat:10-jdk21
+            LABEL "Project"="Vprofile"
+            LABEL "Author"="Imran"
+            RUN rm -rf /usr/local/tomcat/webapps/*
+            COPY --from=BUILD_IMAGE /vprofile-profile/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
+
+            EXPOSE 8080
+            CMD ["catalina.sh", "run"]
+    * Dockerfile for DB Image [MySQL]
+      
+            FROM mysql:8.0.33
+            LABEL "Project"="Vprofile"
+            LABEL "Author"="Imran"
+ 
+            ENV MYSQL_ROOT_PASSWORD="vproddpass"
+            ENV MYSQL_DATABASE="accounts"
+
+            ADD db_backuo.sql docker-entrypoint-initdb.d/db_backuo.sql
+      * Dockerfile fo Web Image [NGINX]
+        
+            FROM nginx
+            LABEL "Project"="Vprofile"
+            LABEL "Author"="Imran"
+
+            RUN rm -rf /etc/nginx/conf.d/default.conf
+            COPY nginvprofile.conf /etc/nginx/conf.d/vproapp.conf
+        
   * 3️⃣ Write a docker-compose.yml file to run multiple containers.
   * 4️⃣ Test everything and push the images to DockerHub.
     
